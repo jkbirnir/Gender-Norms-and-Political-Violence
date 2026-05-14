@@ -1,0 +1,48 @@
+\begin{table}[!h]
+\centering
+\caption{\label{tab:tab:vip}Top 20 Predictors of Attitudes Toward Political Violence (Random Forest)}
+\centering
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{1cm}>{\raggedleft\arraybackslash}p{7cm}>{}p{3cm}}
+\toprule
+Variable & Importance Score\\
+\midrule
+male\_assault\_justified & 100.00\\
+ses & 92.10\\
+age & 88.93\\
+women\_endure\_violence\_family & 83.21\\
+women\_political\_participation & 78.07\\
+\addlinespace
+men\_suppress\_emotions & 74.51\\
+male\_breadwinner & 73.81\\
+monthly\_spending & 72.82\\
+dual\_income & 72.21\\
+political\_interest & 68.96\\
+\addlinespace
+women\_defer\_vote\_to\_man & 68.11\\
+education & 66.65\\
+genderMale & 65.28\\
+pol\_nat & 59.46\\
+econ\_household & 59.42\\
+\addlinespace
+econ\_nat & 49.67\\
+pol\_province & 48.44\\
+demonstrations\_area & 36.36\\
+ever\_campaigned\_for\_other & 35.93\\
+ever\_ran\_for\_office & 32.03\\
+\addlinespace
+ever\_womens\_rights\_org & 27.18\\
+ever\_peace\_movement & 23.26\\
+voted\_legislative\_2019 & 19.23\\
+ever\_strike\_boycott\_bin & 9.61\\
+ever\_violent\_demo\_bin & 2.63\\
+\addlinespace
+voted\_presidential\_2019 & 0.00\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[para]
+\item \textit{Note:} 
+\item Variable importance scores are based on impurity reduction across 500 trees using the ranger algorithm. Scores are normalized to a 0--100 scale relative to the highest-ranked predictor. All variables shown scored above the mean importance threshold.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
