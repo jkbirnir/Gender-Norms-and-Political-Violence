@@ -30,7 +30,7 @@ m_full <- lm(political_violence_flip ~ male_breadwinner +
                women_endure_violence_family +
                gender + age + education + ses +
                ever_violent_demo_bin + ever_strike_boycott_bin +
-               political_interest + pol_nat + econ_household,
+               political_interest + pol_nat + econ_nat,
              data = rf_dat)
 
 # H3a: Men ~ Hostile Patriarchy x Gender
@@ -38,7 +38,7 @@ h3a_no_controls <- lm(political_violence_flip ~ women_endure_violence_family * g
                       data = rf_dat)
 
 h3a_controls    <- lm(political_violence_flip ~ women_endure_violence_family * gender +
-                        age + education + ses + political_interest + pol_nat + econ_household,
+                        age + education + ses + political_interest + pol_nat + econ_nat,
                       data = rf_dat)
 
 # H3b: Men ~ Violent Hypermasculinity x Gender
@@ -46,7 +46,7 @@ h3b_no_controls <- lm(political_violence_flip ~ male_assault_justified * gender,
                       data = rf_dat)
 h3b_controls    <- lm(political_violence_flip ~ male_assault_justified * gender +
                         age + education + ses + political_interest +
-                        pol_nat + econ_household,
+                        pol_nat + econ_nat,
                       data = rf_dat)
 
 # H4a: Women ~ Benevolent Patriarchy x Gender
@@ -57,7 +57,7 @@ h4a_no_controls <- lm(political_violence_flip ~ male_breadwinner * gender +
 h4a_controls    <- lm(political_violence_flip ~ male_breadwinner * gender +
                         women_defer_vote_to_man * gender +
                         age + education + ses + political_interest +
-                        pol_nat + econ_household,
+                        pol_nat + econ_nat,
                       data = rf_dat)
 
 # H4b: Women ~ Benevolent Hypermasculinity x Gender
@@ -66,7 +66,7 @@ h4b_no_controls <- lm(political_violence_flip ~ men_suppress_emotions * gender,
 
 h4b_controls    <- lm(political_violence_flip ~ men_suppress_emotions * gender +
                         age + education + ses + political_interest +
-                        pol_nat + econ_household,
+                        pol_nat + econ_nat,
                       data = rf_dat)
 
 # Supplementary models showing gender predicting the patriarchal values
