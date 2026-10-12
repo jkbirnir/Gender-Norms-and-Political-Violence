@@ -1,16 +1,40 @@
-# Gender-Norms-and-Political-Violence
-Replication materials for Birnir and Overos n.d
+# Gender Norms and Attitudes about Political Violence
 
-The analysis folder contains scripts that generate model output and tables for the paper. Running the 00_masater.R script runs all scripts, loads appropriate packages and installs needed packages if necessary. Each section of the script is saved as its own file.
+Replication materials for the analysis of gender norms and support for
+political violence using a 2022 survey of 1,289 Indonesian adults.
 
-- 01_load.R loads the data and packages
-- 02_rf_prep.R creates objects requried for running the Random Forest model
-- 03_rf_model.R runs the Random Forest model and generates variable importance results
-- 04_ols_models.R runs all OLS models in both the main article and supplementary appendices
-- 05_output.R generates the tables and saves them as latex files in the tables folder
+## Requirements
 
-The data folder contains the survey data in both RData and csv form.
+R (>= 4.1). Install the required packages:
 
-The tables folder will hold the latex files for the research paper.
+```r
+install.packages(c("here", "tidyverse", "caret", "ranger", "MASS",
+                   "survey", "psych", "sandwich", "lmtest",
+                   "stargazer", "knitr", "kableExtra"))
+```
 
-Output is an optional folder to save model results or other artifacts from the research pipeline if desired. It is currently empty.
+## Reproduce
+
+From the repository root:
+
+```r
+source("run_all.R")
+```
+
+This fits the models and writes every table to `tables/` as `.tex`.
+
+## Layout
+
+```
+run_all.R                 Runs the analysis and builds the tables
+R/01_prepare_data.R       How the analysis data was built (raw data not shared)
+R/02_analysis.R           Random forest, OLS models, robustness checks
+R/03_tables.R             All tables
+data/analysis_data.csv    De-identified survey responses + religion indicators
+data/religion_population_2024.csv   Population by religion, used for weighting
+tables/                   Output
+```
+
+The raw individual survey includes identifiers (panel ID, device, location,
+timestamps) and is not shared. `R/01_prepare_data.R` documents how the
+de-identified analysis file was produced from it.
