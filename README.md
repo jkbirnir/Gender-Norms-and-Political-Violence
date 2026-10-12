@@ -27,9 +27,8 @@ This fits the models and writes every table to `tables/` as `.tex`.
 
 ```
 run_all.R                 Runs the analysis and builds the tables
-R/01_prepare_data.R       How the analysis data was built (raw data not shared)
-R/02_analysis.R           Random forest, OLS models, robustness checks
-R/03_tables.R             All tables
+R/01_analysis.R           Random forest, OLS models, robustness checks
+R/02_tables.R             All tables
 data/analysis_data.csv    De-identified survey responses + religion indicators
 data/religion_population_2024.csv   Population by religion, used for weighting
 tables/                   Output
